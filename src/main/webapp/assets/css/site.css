@@ -1,0 +1,45 @@
+/* Public website - mobile-first, dark + orange (matches the admin panel) */
+:root{--bg:#141414;--panel:#1d1d1f;--panel2:#262628;--line:#333336;--muted:#a8a8ae;--orange:#ff6a00;--orange-d:#d95a00;--bs-body-bg:#141414;--bs-body-color:#ececec}
+body{font-family:'Barlow','Segoe UI',system-ui,sans-serif;font-size:1.05rem;padding-bottom:72px}
+h1,h2,h3,.brand{font-family:'Barlow Condensed','Segoe UI',sans-serif;font-weight:800;letter-spacing:.2px}
+a{color:var(--orange)}a:hover{color:#ff8c3a}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+.site-nav{background:#101010;border-bottom:1px solid var(--line)}
+.brand{font-size:1.7rem;color:#fff!important}.brand span{color:var(--orange)}
+.site-nav .nav-link.active{color:var(--orange)}
+.btn-orange{background:var(--orange);border-color:var(--orange);color:#111;font-weight:700}
+.btn-orange:hover,.btn-orange:focus{background:var(--orange-d);border-color:var(--orange-d);color:#111}
+.btn-line{border:1px solid #55555a;color:#ececec;font-weight:600}.btn-line:hover{border-color:var(--orange);color:var(--orange)}
+.hero{padding:3.5rem 0 3rem;background:#141414 center/cover no-repeat}
+.hero h1{font-size:clamp(2.8rem,11vw,5.5rem);line-height:.95;margin-bottom:1rem}
+.hero p{font-size:1.2rem;color:#c9c9ce;max-width:34rem}
+.section{padding:3rem 0}.section-alt{background:#101010;border-block:1px solid var(--line)}
+.section h2{font-size:clamp(2rem,6vw,2.8rem);margin-bottom:.4rem}
+.lead-muted{color:var(--muted);margin-bottom:1.6rem}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem;height:100%}
+.plan{background:var(--panel);border:1px solid var(--line);border-top:5px solid var(--orange);border-radius:14px;padding:1.5rem;height:100%;display:flex;flex-direction:column;gap:.35rem;position:relative}
+.plan-hot{outline:2px solid var(--orange)}
+.plan h3{font-size:1.6rem;margin:0}
+.price{font-family:'Barlow Condensed',sans-serif;font-size:2.8rem;font-weight:800;color:var(--orange);line-height:1}
+.per{color:var(--muted)}
+.tag{align-self:flex-start;background:var(--panel2);border:1px solid #55555a;border-radius:2rem;padding:.15rem .7rem;font-size:.8rem;font-weight:600}
+.tag-hot{background:var(--orange);border-color:var(--orange);color:#111}
+.badge-status{padding:.4em .8em;border-radius:2rem;font-weight:600;font-size:.82rem}
+.st-active,.st-paid{background:rgba(46,204,113,.15);color:#2ecc71}
+.st-expired,.st-failed{background:rgba(231,76,60,.15);color:#ff6b5b}
+.st-pending,.st-inactive{background:rgba(255,193,7,.15);color:#ffc107}
+.form-control,.form-select{background:var(--panel2);border-color:var(--line);color:#ececec}
+.form-control:focus,.form-select:focus{background:var(--panel2);color:#ececec;border-color:var(--orange);box-shadow:0 0 0 .2rem rgba(255,106,0,.2)}
+.accordion{--bs-accordion-bg:var(--panel);--bs-accordion-border-color:var(--line);--bs-accordion-btn-bg:var(--panel);--bs-accordion-active-bg:var(--panel2);--bs-accordion-active-color:var(--orange)}
+.table{--bs-table-bg:transparent;--bs-table-border-color:var(--line)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;display:flex;gap:.9rem;padding:.6rem 0;align-items:flex-start}
+.steps li::before{content:counter(s);flex:0 0 2rem;height:2rem;border-radius:50%;background:var(--orange);color:#111;font-weight:800;display:flex;align-items:center;justify-content:center}
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:1050;background:#25d366;color:#0b2e17;font-weight:700;border-radius:2rem;padding:.75rem 1.2rem;box-shadow:0 4px 16px rgba(0,0,0,.5);text-decoration:none}
+.wa-float:hover{color:#0b2e17;filter:brightness(1.08)}
+.site-foot{border-top:1px solid var(--line);background:#101010;padding:2rem 0;color:var(--muted)}
+.alert{border:0;border-left:4px solid}
+.alert-success{background:rgba(46,204,113,.12);color:#6ee7a0;border-color:#2ecc71}
+.alert-danger{background:rgba(231,76,60,.12);color:#ff8f82;border-color:#e74c3c}
+@media(min-width:768px){.hero{padding:6rem 0 5rem}.section{padding:4.5rem 0}body{padding-bottom:0}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

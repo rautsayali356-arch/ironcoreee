@@ -1,0 +1,21 @@
+# One command starts MySQL (with the tables and sample data) and the website:  docker compose up --build
+services:
+  db:
+    image: mysql:8.0
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gym_db
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d   # runs 01_schema.sql then 02_sample_data.sql on first start
+      - dbdata:/var/lib/mysql
+  app:
+    build: .
+    depends_on: [db]
+    ports: ["8080:8080"]
+    environment:
+      DB_URL: jdbc:mysql://db:3306/gym_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Kolkata
+      DB_USER: root
+      DB_PASS: root
+volumes:
+  dbdata:
